@@ -11,6 +11,42 @@
     <link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/music.css">
 	<link rel="shortcut icon" href="http://www.monkeyblog.cn/wp-content/themes/begin/img/favicon.ico">
+	<style>
+		 #FocusPicture{
+            width: 2400px;
+            height: 400px;
+            position: absolute;
+        }
+        #FocusPicture li{
+            list-style: none;
+            width: 600px;
+            height: 400px;
+            float: left;
+        }
+        .uncheck{
+            width: 8px;
+            height: 8px;
+            background: #EAA08F;
+            border: none;
+            border-radius: 5px;
+        }
+        .chected{
+            width: 8px;
+            height: 8px;
+            background: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #GD{
+        	margin-left: 27%;
+        	border-radius: 15px;
+        	width: 600px;
+        	height: 200px;
+        	border: 2px solid #EAA08F;
+        	position: relative;
+        	overflow: hidden
+        }
+    </style>
 </head>
 <body>
 	<!-- 头部导航 -->
@@ -39,9 +75,62 @@
 			<div class="jumbotron">
 				<h1 class="animated bounceInLeft">Hello, visitors!</h1>
 				<p>...</p>
-				<p><a class="btn btn-primary btn-lg" href="#about" role="button" style="background: #FFEFD5;color: black;border:2px #EAA08F solid;">Old Songs</a></p>
+				<p><a class="btn btn-primary btn-lg animated bounceInLeft" href="#about" role="button" style="background: #FFEFD5;color: black;border:2px #EAA08F solid;">Old Songs</a></p>
 			</div>
 		</div>
+		<!-- 轮播图 -->
+		<div id="GD">
+		    <ul id="FocusPicture">
+		        <li><img src="images/The show.jpg" height="200" width="600"></li>
+		        <li><img src="images/gd2.jpg" height="200" width="600"></li>
+		        <li><img src="images/gd3.jpg" height="200" width="600"></li>
+		        <li><img src="images/gd4.jpg" height="200" width="600"></li>
+		    </ul>
+	    <div style="width: 100%;height: 20px;position:absolute;bottom: 0;">
+	        <div style="width: 60px;height: 20px;margin: auto;" id="inputs">
+	            <input type="button" class="chected">
+	            <input type="button" class="uncheck">
+	            <input type="button" class="uncheck">
+	            <input type="button" class="uncheck">
+	        </div>
+	    </div>
+	</div>
+	<script>
+        $(function(){
+            var uls = $('#FocusPicture');
+            var lists = $('#FocusPicture>li');
+            var allInput = $('#inputs>input');
+            var  index = 0;
+            $.each(allInput,function(k,v){
+                $(v).bind({
+                    click:function(){
+                        $.each(allInput,function(k,v){
+                            v.className ='uncheck';
+                        })
+                        this.className = 'chected';
+                        index = -1 * k % allInput.length * 600;
+                        uls.animate({left:index});
+                    }
+                })
+            })
+           var timer = setInterval(function(){
+               index -= 600;
+               if(index <  (-1 *lists.length*600 + 600)){
+                   index = 0;
+               }
+               $.each(allInput,function(k,v){
+                   $.each(allInput,function(k,v){
+                       v.className ='uncheck';
+                       if(index == (-1 * k % allInput.length * 600)){
+                           v.className = 'chected';
+                       }
+                   })
+               });
+               uls.animate({left:index});
+           },3000);
+        })
+    </script>
+	<!-- //轮播图 -->
 	</div>
 	<div id="about" class="about">
 		<div class="container">
@@ -54,44 +143,15 @@
 		<dt class="art">
 			<img src="images/ai4.jpg" alt="专辑">
 		</dt>
-		<dd class="icon-song"><span></span>爱,很简单</dd>
+		<dd class="icon-song"><span></span>歌曲：爱,很简单</dd>
 		<dd class="icon-artist"><span></span>歌手：陶喆</dd>
 		<dd class="icon-album"><span></span>专辑：《David Tao 同名专辑》</dd>
 		<dd class="icon-like"><span></span><a href="#">喜欢</a>&nbsp;<span class="glyphicon glyphicon-headphones"></span></dd>
-
 			<dd class="aud"><audio src="images/taomusic.mp3" controls></audio></dd>
-
 		<div class="clearfix"></div>
 	</div>
 	</div>
-	<!-- //音乐-->
-    <!-- data-ride="carousel"自动播放-->
-	<!--<div class="nav0">-->
-    <!--<nav class="nav1">-->
-	    <!--<div class="carousel slide" id="myCarousel" style="width: 600px" data-ride="carousel">-->
-	        <!--<div class="carousel-inner">-->
-	            <!--<div class="item active">-->
-	                <!--<img src="images/ai1.jpg">-->
-	            <!--</div>-->
-	            <!--<div class="item">-->
-	            	<!--<img src="images/ai2.jpg" >-->
-	            <!--</div>-->
-	            <!--<div class="item">-->
-	            	<!--<img src="images/ai3.jpg">-->
-	            <!--</div>-->
-				<!--<div class="item">-->
-					<!--<img src="images/ai4.jpg">-->
-				<!--</div>-->
-	        <!--</div>-->
-	    <!--</div>-->
-
-	<!--</nav>-->
-	<!--</div>-->
-	<!--<script>-->
-		<!--$('.carousel').carousel({-->
-			<!--interval: 3000-->
-		<!--});-->
-	<!--</script>-->
+	
 	<div id="fm">
 		<div class="fm-main clear">
 			<div class="fm-body">
