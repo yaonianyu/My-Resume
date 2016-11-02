@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>        
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">        
+		<title>fullPageDemo</title>        
+		        
+		<script src="html/js/jquery-1.11.1.min.js"></script>        
+		<script src="html/js/easyResponsiveTabs.js"></script>        
+        
+	</head>  
+    <body>
+    <div class="sap_tabs">  
+        <div id="horizontalTab"  
+            style="display: block; width: 100%; margin: 0px;">  
+            <ul class="resp-tabs-list">  
+                <li class="resp-tab-item" aria-controls="tab_item-0" role="tab"  
+                    style="font-size: 20px"><span>选项卡1</span></li>  
+                <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"  
+                    style="font-size: 20px"><span>选项卡2</span></li>  
+                <div class="clearfix"></div>  
+            </ul>  
+            <div class="resp-tabs-container">  
+                <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">  
+                    <div class="tab_img grid">  
+                        <div class="col-md-3 img-top ">  
+                            <a href="#" rel="title"  
+                                class="b-link-stripe b-animate-go  thickbox" target="_blank">  
+                                <figure class="effect-apollo"> <img  
+                                    src="html/images/5.png" height="298" width="298" alt="" /> <figcaption>  
+                                </figcaption> </figure>  
+                            </a>  
+                        </div>  
+                        <div class="col-md-3 img-top ">  
+                            <a href="#" rel="title"  
+                                class="b-link-stripe b-animate-go  thickbox" target="_blank">  
+                                <figure class="effect-apollo"> <img  
+                                    src="html/images/6.png" height="624" width="668" alt="" /> <figcaption>  
+                                </figcaption> </figure>  
+                            </a>  
+                        </div>  
+                        <div class="col-md-3 img-top ">  
+                            <a href="#" rel="title"  
+                                class="b-link-stripe b-animate-go  thickbox" target="_blank">  
+                                <figure class="effect-apollo"> <img  
+                                    src="html/images/7.png" height="298" width="298" alt="" /> <figcaption>  
+                                </figcaption> </figure>  
+                            </a>  
+                        </div>  
+                        <div class="clearfix"></div>  
+                    </div>  
+                </div>  
+                <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">  
+                    <div class="tab_img grid">  
+                        <div class="col-md-3 img-top ">  
+                            <a href="#" rel="title"  
+                                class="b-link-stripe b-animate-go  thickbox" target="_blank">  
+                                <figure class="effect-apollo"> <img  
+                                    src="html/images/a1.jpg" height="1080" width="1920" alt="" /> <figcaption>  
+                                </figcaption> </figure>  
+                            </a>  
+                        </div>  
+                        <div class="col-md-3 img-top ">  
+                            <a href="#" rel="title"  
+                                class="b-link-stripe b-animate-go  thickbox" target="_blank">  
+                                <figure class="effect-apollo"> <img  
+                                    src="html/images/g4.jpg" height="381" width="600" alt="" /> <figcaption>  
+                                </figcaption> </figure>  
+                            </a>  
+                        </div>  
+                        <div class="col-md-3 img-top ">  
+                            <a href="#" rel="title"  
+                                class="b-link-stripe b-animate-go  thickbox" target="_blank">  
+                                <figure class="effect-apollo"> <img  
+                                    src="html/images/g8.jpg" height="381" width="600" alt="" /> <figcaption>  
+                                </figcaption> </figure>  
+                            </a>  
+                        </div>  
+                        <div class="clearfix"></div>  
+                    </div>  
+                </div>  
+            </div>  
+        </div>  
+    </div> 
+    <script type="text/javascript">  
+                $(document).ready(function () {  
+                    $('#horizontalTab').easyResponsiveTabs({  
+                        type: 'default', //Types: default, vertical, accordion             
+                        width: 'auto', //auto or any width like 600px  
+                        fit: true   // 100% fit in a container  
+                    });  
+                });  
+                  
+</script>    
+    </body>
+</html>
